@@ -27,5 +27,23 @@ namespace ABCRetail.Services
 
             await _queue.SendMessageAsync(message);
         }
+
+        public async Task<string?> ReceiveOrderAsync()
+        {
+            var response =
+                await _queue.ReceiveMessageAsync();
+
+            if (response.Value == null)
+                return null;
+
+            string message =
+                response.Value.MessageText;
+
+            await _queue.DeleteMessageAsync(
+                response.Value.MessageId,
+                response.Value.PopReceipt);
+
+            return message;
+        }
     }
 }

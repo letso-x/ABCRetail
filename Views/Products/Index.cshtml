@@ -9,18 +9,30 @@
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
-            <th>Image Link</th>
+            <th>Image</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var product in Model)
         {
+            
             <tr>
                 <td>@product.Name</td>
+
                 <td>@product.Description</td>
-                <td>@product.Price</td>
-                <td>@product.ImageName</td>
+
+                <td>R @product.Price</td>
+
+               <td> @if (!string.IsNullOrEmpty(product.ImageUrl))
+                {
+                    <img src="@product.ImageUrl"
+                         alt="@product.Name"
+                         width="200" />
+                }
+                </td>
             </tr>
+
+            
         }
     </tbody>
 </table>

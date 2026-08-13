@@ -7,10 +7,12 @@ namespace ABCRetail.Controllers
     public class CustomersController : Controller
     {
         private readonly TableStorageService _tableStorage;
+        private readonly FileStorageService _fileStorage;
 
-        public CustomersController(TableStorageService tableStorage)
+        public CustomersController(TableStorageService tableStorage, FileStorageService fileStorage)
         {
             _tableStorage = tableStorage;
+            _fileStorage = fileStorage;
         }
 
         // READ
@@ -34,6 +36,7 @@ namespace ABCRetail.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Customer customer)
         {
+            string fileName =$"CustomerLog_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
             if (!ModelState.IsValid)
             {
                 return View(customer);
@@ -43,6 +46,10 @@ namespace ABCRetail.Controllers
             customer.RowKey = Guid.NewGuid().ToString();
 
             await _tableStorage.AddCustomerAsync(customer);
+            await _fileStorage.CreateLogFileAsync(
+                     fileName,
+                    $"Customer '{customer.Name}' was created. " +
+                    $"Email: {customer.Email}");
 
             return RedirectToAction(nameof(Index));
         }

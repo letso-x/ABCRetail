@@ -11,7 +11,7 @@ namespace ABCRetail.Services
         public FileStorageService(IConfiguration configuration)
         {
             var connectionString =
-                configuration.GetConnectionString("AzureStorage");
+                configuration.GetConnectionString("AzureTableStorage");
 
             _shareClient = new ShareClient(
                 connectionString,
@@ -39,6 +39,7 @@ namespace ABCRetail.Services
             await fileClient.CreateAsync(stream.Length);
 
             await fileClient.UploadAsync(stream);
+
         }
     }
 }

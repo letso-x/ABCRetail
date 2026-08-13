@@ -1,8 +1,131 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mb-5">
+
+    <h1 class="display-4">
+        ABC Retail
+    </h1>
+
+    <p class="lead">
+        Retail management powered by Azure Storage
+    </p>
+
+</div>
+
+
+<div class="row">
+
+    <div class="col-md-6 mb-4">
+
+        <div class="card h-100">
+
+            <div class="card-body">
+
+                <h3 class="card-title">
+                    Customers
+                </h3>
+
+                <p class="card-text">
+                    Manage customer profiles stored
+                    in Azure Table Storage.
+                </p>
+
+                <a asp-controller="Customers"
+                   asp-action="Index"
+                   class="btn btn-primary">
+                    Manage Customers
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-6 mb-4">
+
+        <div class="card h-100">
+
+            <div class="card-body">
+
+                <h3 class="card-title">
+                    Products
+                </h3>
+
+                <p class="card-text">
+                    Manage products and upload product
+                    images to Azure Blob Storage.
+                </p>
+
+                <a asp-controller="Products"
+                   asp-action="Index"
+                   class="btn btn-primary">
+                    Manage Products
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-6 mb-4">
+
+        <div class="card h-100">
+
+            <div class="card-body">
+
+                <h3 class="card-title">
+                    Orders
+                </h3>
+
+                <p class="card-text">
+                    Submit and process orders using
+                    Azure Queue Storage.
+                </p>
+
+                <a asp-controller="Orders"
+                   asp-action="Create"
+                   class="btn btn-primary">
+                    Manage Orders
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-6 mb-4">
+
+        <div class="card h-100">
+
+            <div class="card-body">
+
+                <h3 class="card-title">
+                    Application Logs
+                </h3>
+
+                <p class="card-text">
+                    Create application log files stored
+                    using Azure Files.
+                </p>
+
+                <a asp-controller="Logs"
+                   asp-action="Create"
+                   class="btn btn-primary">
+                    Manage Logs
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>

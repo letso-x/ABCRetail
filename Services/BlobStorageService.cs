@@ -18,20 +18,22 @@ namespace ABCRetail.Services
             _container.CreateIfNotExists();
         }
 
-        public async Task UploadAsync(
-            IFormFile file)
+        public async Task<string> UploadAsync(IFormFile file)
         {
             if (file == null || file.Length == 0)
-                return;
+                throw new ArgumentException("No file supplied.");
+
+            string fileName =
+                Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
 
             BlobClient blob =
-                _container.GetBlobClient(file.FileName);
+                _container.GetBlobClient(fileName);
 
             using Stream stream = file.OpenReadStream();
 
-            await blob.UploadAsync(
-                stream,
-                overwrite: true);
+            await blob.UploadAsync(stream, overwrite: true);
+
+            return blob.Uri.ToString();
         }
     }
 }
