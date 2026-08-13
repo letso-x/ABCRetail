@@ -1,0 +1,23 @@
+﻿@model ABCRetail.Models.Order
+
+<h1>Create Order</h1>
+
+<form asp-action="Create" method="post">
+
+    <label>Customer ID</label>
+    <input asp-for="CustomerId" />
+
+    <label>Product ID</label>
+    <input asp-for="ProductId" />
+
+    <label>Quantity</label>
+    <input asp-for="Quantity" type="number" />
+
+    <button type="submit">
+        Place Order
+    </button>
+
+</form>
+
+
+

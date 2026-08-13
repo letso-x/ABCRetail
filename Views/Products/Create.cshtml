@@ -1,0 +1,29 @@
+﻿@model ABCRetail.Models.Product
+
+<h1>Add Product</h1>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label>Name</label>
+        <input asp-for="Name" />
+    </div>
+
+    <div>
+        <label>Description</label>
+        <input asp-for="Description" />
+    </div>
+
+    <div>
+        <label>Price</label>
+        <input asp-for="Price" />
+    </div>
+    <div>
+        <label>Image Link</label>
+        <input asp-for="ImageName" />
+    </div>
+
+
+    <button type="submit">Add Product</button>
+
+</form>

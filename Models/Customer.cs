@@ -1,18 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Azure;
+using Azure.Data.Tables;
 
 namespace ABCRetail.Models
 {
-    public class Customer
+    public class Customer : ITableEntity
     {
-        public int ID { get; set; }
-        [Required(ErrorMessage = "Name is required.")]
-        [StringLength(50)]
-        public string Name { get; set; }
-        [Required(ErrorMessage="Email address is required.")]
-        [EmailAddress]
-        public string Email { get; set; }
-        [Required(ErrorMessage = "Phone number is required.")]
-        [StringLength(15)]
-        public string Phone { get; set; }
+        public string PartitionKey { get; set; } = "Customers";
+        public string RowKey { get; set; } = Guid.NewGuid().ToString();
+        public DateTimeOffset? Timestamp { get; set; }
+        public ETag ETag { get; set; }
+
+        public string Name { get; set; } = "";
+        public string Email { get; set; } = "";
+        public string Phone { get; set; } = "";
     }
 }

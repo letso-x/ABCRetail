@@ -1,7 +1,15 @@
+using ABCRetail.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<TableStorageService>();
+builder.Services.AddScoped<BlobStorageService>();
+builder.Services.AddScoped<QueueStorageService>();
+builder.Services.AddScoped<FileStorageService>();
+
+
 
 var app = builder.Build();
 
