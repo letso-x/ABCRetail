@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\ABCRetail\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EC06B5ED-BE22-5F27-AB62-5F9B4343860D}|ABCRetailFunctions\\ABCRetailFunctions.csproj|c:\\users\\user\\source\\repos\\abcretail\\abcretailfunctions\\uploadfilefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC06B5ED-BE22-5F27-AB62-5F9B4343860D}|ABCRetailFunctions\\ABCRetailFunctions.csproj|solutionrelative:abcretailfunctions\\uploadfilefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FC33552-58CA-9531-D554-4F3741805EA0}|ABCRetail Web\\ABCRetail.csproj|c:\\users\\user\\source\\repos\\abcretail\\abcretail web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7FC33552-58CA-9531-D554-4F3741805EA0}|ABCRetail Web\\ABCRetail.csproj|solutionrelative:abcretail web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EC06B5ED-BE22-5F27-AB62-5F9B4343860D}|ABCRetailFunctions\\ABCRetailFunctions.csproj|c:\\users\\user\\source\\repos\\abcretail\\abcretailfunctions\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{EC06B5ED-BE22-5F27-AB62-5F9B4343860D}|ABCRetailFunctions\\ABCRetailFunctions.csproj|solutionrelative:abcretailfunctions\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC06B5ED-BE22-5F27-AB62-5F9B4343860D}|ABCRetailFunctions\\ABCRetailFunctions.csproj|c:\\users\\user\\source\\repos\\abcretail\\abcretailfunctions\\queuefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC06B5ED-BE22-5F27-AB62-5F9B4343860D}|ABCRetailFunctions\\ABCRetailFunctions.csproj|solutionrelative:abcretailfunctions\\queuefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC06B5ED-BE22-5F27-AB62-5F9B4343860D}|ABCRetailFunctions\\ABCRetailFunctions.csproj|c:\\users\\user\\source\\repos\\abcretail\\abcretailfunctions\\uploadblobfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC06B5ED-BE22-5F27-AB62-5F9B4343860D}|ABCRetailFunctions\\ABCRetailFunctions.csproj|solutionrelative:abcretailfunctions\\uploadblobfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,41 +42,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "QueueFunction.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ABCRetail\\ABCRetailFunctions\\QueueFunction.cs",
-              "RelativeDocumentMoniker": "ABCRetailFunctions\\QueueFunction.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\ABCRetail\\ABCRetailFunctions\\QueueFunction.cs",
-              "RelativeToolTip": "ABCRetailFunctions\\QueueFunction.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAIwEUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "UploadFileFunction.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ABCRetail\\ABCRetailFunctions\\UploadFileFunction.cs",
+              "RelativeDocumentMoniker": "ABCRetailFunctions\\UploadFileFunction.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\ABCRetail\\ABCRetailFunctions\\UploadFileFunction.cs",
+              "RelativeToolTip": "ABCRetailFunctions\\UploadFileFunction.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAADwv0UAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T13:03:25.599Z",
+              "WhenOpened": "2026-09-16T13:16:18.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "local.settings.json",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ABCRetail\\ABCRetailFunctions\\local.settings.json",
-              "RelativeDocumentMoniker": "ABCRetailFunctions\\local.settings.json",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\ABCRetail\\ABCRetailFunctions\\local.settings.json",
-              "RelativeToolTip": "ABCRetailFunctions\\local.settings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ABCRetail\\ABCRetail Web\\appsettings.json",
+              "RelativeDocumentMoniker": "ABCRetail Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\ABCRetail\\ABCRetail Web\\appsettings.json",
+              "RelativeToolTip": "ABCRetail Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-09-16T12:49:35.498Z",
+              "WhenOpened": "2026-09-16T13:07:57.972Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UploadBlobFunction.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ABCRetail\\ABCRetailFunctions\\UploadBlobFunction.cs",
-              "RelativeDocumentMoniker": "ABCRetailFunctions\\UploadBlobFunction.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\ABCRetail\\ABCRetailFunctions\\UploadBlobFunction.cs",
-              "RelativeToolTip": "ABCRetailFunctions\\UploadBlobFunction.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAIwEYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T12:48:00.056Z",
+              "Title": "local.settings.json",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ABCRetail\\ABCRetailFunctions\\local.settings.json",
+              "RelativeDocumentMoniker": "ABCRetailFunctions\\local.settings.json",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\ABCRetail\\ABCRetailFunctions\\local.settings.json",
+              "RelativeToolTip": "ABCRetailFunctions\\local.settings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-16T12:49:35.498Z",
               "EditorCaption": ""
             }
           ]
