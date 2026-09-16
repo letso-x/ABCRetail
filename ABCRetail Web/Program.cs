@@ -8,6 +8,21 @@ builder.Services.AddScoped<TableStorageService>();
 builder.Services.AddScoped<BlobStorageService>();
 builder.Services.AddScoped<QueueStorageService>();
 builder.Services.AddScoped<FileStorageService>();
+builder.Services.AddHttpClient<AzureFunctionsClient>(
+    (serviceProvider, httpClient) =>
+    {
+        var configuration = serviceProvider.GetRequiredService<IConfiguration>();
+        var baseUrl = configuration["AzureFunctions:BaseUrl"];
+
+        if (string.IsNullOrWhiteSpace(baseUrl))
+        {
+            throw new InvalidOperationException(
+                "AzureFunctions:BaseUrl is not configured.");
+        }
+
+        httpClient.BaseAddress = new Uri(
+            baseUrl.TrimEnd('/') + "/");
+    });
 
 
 

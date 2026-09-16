@@ -7,12 +7,14 @@ namespace ABCRetail.Controllers
     public class CustomersController : Controller
     {
         private readonly TableStorageService _tableStorage;
-        private readonly FileStorageService _fileStorage;
+        private readonly AzureFunctionsClient _functions;
 
-        public CustomersController(TableStorageService tableStorage, FileStorageService fileStorage)
+        public CustomersController(
+            TableStorageService tableStorage,
+            AzureFunctionsClient functions)
         {
             _tableStorage = tableStorage;
-            _fileStorage = fileStorage;
+            _functions = functions;
         }
 
         // READ
@@ -45,8 +47,8 @@ namespace ABCRetail.Controllers
             customer.PartitionKey = "Customers";
             customer.RowKey = Guid.NewGuid().ToString();
 
-            await _tableStorage.AddCustomerAsync(customer);
-            await _fileStorage.CreateLogFileAsync(
+            await _functions.StoreCustomerAsync(customer);
+            await _functions.UploadFileAsync(
                      fileName,
                     $"Customer '{customer.Name}' was created. " +
                     $"Email: {customer.Email}");

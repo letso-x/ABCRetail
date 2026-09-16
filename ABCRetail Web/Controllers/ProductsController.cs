@@ -7,14 +7,14 @@ namespace ABCRetail.Controllers
     public class ProductsController : Controller
     {
         private readonly TableStorageService _tableStorage;
-        private readonly BlobStorageService _blobStorage;
-        private readonly FileStorageService _fileStorage;
+        private readonly AzureFunctionsClient _functions;
 
-        public ProductsController(TableStorageService tableStorage, BlobStorageService blobStorage, FileStorageService fileStorage)
+        public ProductsController(
+            TableStorageService tableStorage,
+            AzureFunctionsClient functions)
         {
             _tableStorage = tableStorage;
-            _blobStorage = blobStorage;
-           _fileStorage = fileStorage;
+            _functions = functions;
         }
 
         // READ
@@ -49,7 +49,7 @@ namespace ABCRetail.Controllers
             if (image != null && image.Length > 0)
             {
                 string imageUrl =
-                    await _blobStorage.UploadAsync(image);
+                    await _functions.UploadBlobAsync(image);
 
                 product.ImageUrl = imageUrl;
                 product.ImageFileName = image.FileName;
@@ -59,10 +59,10 @@ namespace ABCRetail.Controllers
             product.PartitionKey = "Products";
             product.RowKey = Guid.NewGuid().ToString();
 
-            await _tableStorage.AddProductAsync(product);
+            await _functions.StoreProductAsync(product);
 
             // 3. Create log in Azure Files
-            await _fileStorage.CreateLogFileAsync(
+            await _functions.UploadFileAsync(
                 fileName,
                 $"Product '{product.Name}' was created. " +
                 $"Image: {product.ImageFileName}");

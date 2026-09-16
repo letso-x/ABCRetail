@@ -6,14 +6,11 @@ namespace ABCRetail.Controllers
 {
     public class OrdersController : Controller
     {
-        private readonly QueueStorageService _queue;
-        private readonly FileStorageService _fileStorage;
+        private readonly AzureFunctionsClient _functions;
 
-        public OrdersController(
-            QueueStorageService queue, FileStorageService fileStorage)
+        public OrdersController(AzureFunctionsClient functions)
         {
-            _queue = queue;
-            _fileStorage = fileStorage;
+            _functions = functions;
         }
 
         [HttpGet]
@@ -28,10 +25,10 @@ namespace ABCRetail.Controllers
             order.OrderId = Guid.NewGuid().ToString();
             order.OrderDate = DateTime.Now;
             // Send order to Azure Queue
-            await _queue.SendOrderAsync(order);
+            await _functions.SendOrderAsync(order);
 
             // Create order log in Azure Files
-            await _fileStorage.CreateLogFileAsync(
+            await _functions.UploadFileAsync(
                  $"OrderLog_{DateTime.Now:yyyyMMdd_HHmmss}.txt",
                 $"Order {order.OrderId} was submitted for " +
                 $"Customer {order.CustomerId}, " +

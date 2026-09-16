@@ -5,11 +5,11 @@ namespace ABCRetail.Controllers
 {
     public class LogsController : Controller
     {
-        private readonly FileStorageService _fileStorage;
+        private readonly AzureFunctionsClient _functions;
 
-        public LogsController(FileStorageService fileStorage)
+        public LogsController(AzureFunctionsClient functions)
         {
-            _fileStorage = fileStorage;
+            _functions = functions;
         }
 
         [HttpGet]
@@ -38,7 +38,7 @@ namespace ABCRetail.Controllers
                 fileName += ".txt";
             }
 
-            await _fileStorage.CreateLogFileAsync(
+            await _functions.UploadFileAsync(
                 fileName,
                 content);
 

@@ -5,12 +5,11 @@ namespace ABCRetail.Controllers
 {
     public class BlobsController : Controller
     {
-        private readonly BlobStorageService _blobStorage;
+        private readonly AzureFunctionsClient _functions;
 
-        public BlobsController(
-            BlobStorageService blobStorage)
+        public BlobsController(AzureFunctionsClient functions)
         {
-            _blobStorage = blobStorage;
+            _functions = functions;
         }
 
         [HttpGet]
@@ -22,7 +21,7 @@ namespace ABCRetail.Controllers
         [HttpPost]
         public async Task<IActionResult> Upload(IFormFile file)
         {
-            await _blobStorage.UploadAsync(file);
+            await _functions.UploadBlobAsync(file);
 
             return RedirectToAction(nameof(Upload));
         }
